@@ -52,9 +52,9 @@
                                 <td scope="row">{{ $item->nivel }}</td>
                                 <td scope="row">{{ $item->created_at->format('m-d-Y') }}</td>
                                 <td>
-                                    <a href="{{ asset($item->archivo_link) }}" target="_blank" class="btn link-primary border-primary">
+                                    <a href="{{ Storage::url($item->archivo) }}" target="_blank" class="btn link-primary border-primary">
                                         <i class="ph ph-file-pdf me-2"></i>
-                                        Descargar es
+                                        Descargar
                                     </a>
                                 </td>
                             </tr>
