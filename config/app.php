@@ -70,7 +70,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'America/Guayaquil',
 
     /*
     |--------------------------------------------------------------------------
@@ -83,7 +83,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'es',
 
     /*
     |--------------------------------------------------------------------------
@@ -168,6 +168,10 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+
+        // extras
+        Barryvdh\Snappy\ServiceProvider::class,
+
     ])->toArray(),
 
     /*
@@ -183,6 +187,16 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         // 'Example' => App\Facades\Example::class,
+
+        // extras
+        'PDF' => Barryvdh\Snappy\Facades\SnappyPdf::class,
+        'SnappyImage' => Barryvdh\Snappy\Facades\SnappyImage::class,
+        
     ])->toArray(),
 
+    // extras
+    'EMAIL_ADMIN' => env('EMAIL_ADMIN', ''),
+    'PASSWORD_ADMIN' => env('PASSWORD_ADMIN', ''),
+    'ROLE_ADMIN' => env('ROLE_ADMIN', ''),
+    'ROLE_DOCENTE'=>env('ROLE_DOCENTE',''),
 ];

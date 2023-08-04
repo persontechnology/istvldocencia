@@ -1,23 +1,31 @@
 @extends('layouts.app')
+@section('breadcrumbs')
+{{ Breadcrumbs::render('home') }}
+@endsection
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
+<!-- Content area -->
+<div class="d-flex justify-content-center align-items-center">
+    <div class="login-form" action="index.html">
+        <div class="card mb-0">
+            <div class="card-body">
+                <div class="text-center">
+                    <div class="card-img-actions d-inline-block mb-3">
+                        <img class="rounded-circles" src="{{ asset('img/istv.jpg') }}" width="260" height="260" alt="">
+                        <div>
+                            <h1>BIENVENIDO</h1>
                         </div>
-                    @endif
-
-                    {{ __('You are logged in!') }}
+                        <div>
+                            <h2>El único modo de hacer un gran trabajo es amar lo que haces. </h2>
+                            <h2>- Steve Jobs </h2>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<!-- /content area -->
 @endsection
+
+

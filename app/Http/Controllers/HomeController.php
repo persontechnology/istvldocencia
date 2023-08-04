@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Clases\ValidadorEc;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -25,4 +26,13 @@ class HomeController extends Controller
     {
         return view('home');
     }
+
+    public function validarec(Request $request)
+    {
+        $validatorEC = new ValidadorEc();
+        $res= $validatorEC->validarIdentificacion($request->identificacion);
+        return json_encode($res);
+    }
 }
+
+
